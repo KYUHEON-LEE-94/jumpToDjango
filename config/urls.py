@@ -22,8 +22,9 @@ from pybo import views
 import pybo.views
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='index'),
     path('admin/', admin.site.urls),
     # pybo.url의 requestMapping("pybo/")
     path('pybo/', include('pybo.urls')),
+    path('common/', include('common.urls')),
 ]
