@@ -16,13 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# pybo라는 디렉터리에서 views.py를 가져온다.
-from pybo import views
-
-import pybo.views
+from pybo.views import base_views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', base_views.index, name='index'),
     path('admin/', admin.site.urls),
     # pybo.url의 requestMapping("pybo/")
     path('pybo/', include('pybo.urls')),
